@@ -17,6 +17,7 @@ typedef struct
 
 int tri_a_bulles(Medicament *tab, int n);
 void recherche_dichotomique(Medicament *tab, int n);
+void medicament_le_plus_cher(Medicament *tab, int n);
 
 
 #endif

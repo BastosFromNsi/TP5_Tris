@@ -67,6 +67,25 @@ void recherche_dichotomique(Medicament *tab, int n)
     }
 }
 
+void medicament_le_plus_cher(Medicament *tab, int n)
+{
+    if (tab == NULL || n <= 0)
+    {
+        return;
+    }
+
+    Medicament max = tab[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (tab[i].prix > max.prix)
+        {
+            max = tab[i];
+        }
+    }
+
+    printf("Le medicament le plus cher est : %s, code : %d, prix : %d\n", max.nom, max.code, max.prix);
+}
+
 int main()
 {
 
@@ -97,6 +116,8 @@ int main()
     }
 
     recherche_dichotomique(tab, n);
+
+    medicament_le_plus_cher(tab, n);
 
     return 0;
 }
