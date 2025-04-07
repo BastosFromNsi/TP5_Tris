@@ -6,7 +6,7 @@ int tri_a_bulles(Medicament *tab, int n)
 {
     if (tab == NULL || n <= 0)
     {
-        return 1;
+        return;
     }
 
     int i, j;
@@ -86,6 +86,22 @@ void medicament_le_plus_cher(Medicament *tab, int n)
     printf("Le medicament le plus cher est : %s, code : %d, prix : %d\n", max.nom, max.code, max.prix);
 }
 
+void taux_medicament(Medicament *tab, int n)
+{
+    if (tab == NULL || n <= 0)
+    {
+        return;
+    }
+
+    int total = 0;
+    for (int i = 0; i < n; i++)
+    {
+        total += tab[i].prix * tab[i].stock_restant;
+    }
+
+    printf("Le taux de medicament est : %d\n", total);
+}
+
 int main()
 {
 
@@ -118,6 +134,8 @@ int main()
     recherche_dichotomique(tab, n);
 
     medicament_le_plus_cher(tab, n);
+
+    taux_medicament(tab, n);
 
     return 0;
 }
